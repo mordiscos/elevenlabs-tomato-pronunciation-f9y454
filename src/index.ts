@@ -8,8 +8,7 @@ async function main() {
 
     // 1. Create a pronunciation dictionary from an XML file with the words "tomato" and "Tomato"
     const xmlFile = fs.createReadStream("path/to/your/xml_file.xml");
-    const createDictResponse = await elevenlabs.pronunciationDictionary.create({
-        file: xmlFile,
+    const createDictResponse = await elevenlabs.pronunciationDictionary.addFromFile(xmlFile, {
         name: "TomatoPronunciationDictionary",
         description: "Dictionary for tomato pronunciation"
     });
